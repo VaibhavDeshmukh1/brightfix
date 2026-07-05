@@ -160,45 +160,47 @@
   <section id="contact">
   <h2>Interested in BrightFix?</h2>
   <p>
-    If you own a rental property and are interested in maintenance coordination support,
+    If you own one or more rental properties and are interested in maintenance coordination support,
     fill out the form below and we will get back to you.
   </p>
 
-  <form class="interest-form" action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+  <form class="interest-form" action="https://formspree.io/f/mnjkwqoj" method="POST">
     <label for="owner-name">Property Owner Name</label>
-    <input 
-      type="text" 
-      id="owner-name" 
-      name="Property Owner Name" 
-      placeholder="Your full name" 
+    <input
+      type="text"
+      id="owner-name"
+      name="property_owner_name"
+      placeholder="Your full name"
       required
     />
 
     <label for="owner-email">Property Owner Email</label>
-    <input 
-      type="email" 
-      id="owner-email" 
-      name="Property Owner Email" 
-      placeholder="your-email@example.com" 
+    <input
+      type="email"
+      id="owner-email"
+      name="property_owner_email"
+      placeholder="your-email@example.com"
       required
     />
 
-    <label for="property-address">Rental Property Address</label>
-    <textarea 
-      id="property-address" 
-      name="Rental Property Address"
+    <label for="property-addresses">Rental Property Address or Addresses</label>
+    <textarea
+      id="property-addresses"
+      name="rental_property_addresses"
       rows="5"
       placeholder="Enter one or more rental property addresses"
       required
     ></textarea>
 
-    <label for="message">Additional Notes</label>
-    <textarea 
-      id="message" 
-      name="Additional Notes"
+    <label for="notes">Additional Notes</label>
+    <textarea
+      id="notes"
+      name="additional_notes"
       rows="4"
       placeholder="Tell us anything else we should know"
     ></textarea>
+
+    <input type="hidden" name="_subject" value="New BrightFix Interest Form Submission">
 
     <button type="submit">Submit Interest Form</button>
   </form>
