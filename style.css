@@ -267,8 +267,103 @@ footer {
 .interest-form button:hover {
   background: #115e59;
 }
+#reviews {
+  background: #eef6f5;
+  overflow: hidden;
+}
 
+.review-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 30px;
+}
+
+.review-carousel::before,
+.review-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.review-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, #eef6f5, transparent);
+}
+
+.review-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, #eef6f5, transparent);
+}
+
+.review-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollReviews 32s linear infinite;
+}
+
+.review-track:hover {
+  animation-play-state: paused;
+}
+
+.review-card {
+  background: white;
+  width: 330px;
+  min-height: 245px;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+  flex-shrink: 0;
+}
+
+.review-card .stars {
+  color: #f59e0b;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-card p {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.review-card h4 {
+  color: #111827;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.review-card span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+@keyframes scrollReviews {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
 @media (max-width: 700px) {
+    .review-card {
+    width: 280px;
+    min-height: 260px;
+  }
+
+  .review-carousel::before,
+  .review-carousel::after {
+    width: 45px;
+  }
   nav {
     flex-direction: column;
     gap: 18px;
